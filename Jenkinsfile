@@ -4,6 +4,9 @@ pipeline {
         string (description: 'enter ami_id', name: 'ami_id')
         choice (choices: ['CI_VPC', 'test1'], description: 'choose key pair?', name: 'key_name')
     }
+    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+
+
     stages {
         stage ('build') {
            steps {
@@ -15,10 +18,10 @@ pipeline {
                // Show the select input modal
                //echo "${ ami_id }"
                //echo "${key_name}"
-          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+//          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
    // some block
 }
-           
+        }         
            }
         }
    }
