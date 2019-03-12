@@ -9,6 +9,12 @@ pipeline {
         
         stage ('build') {
            steps {
+           withCredentials([[
+            $class: 'AmazonWebServicesCredentialsBinding',
+            credentialsId: 'aws-access',
+            accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+            secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        ]]) {    
            git url: 'https://github.com/usman6745/ec2-launch-jenkins.git'
            sh '''
                  chmod +x ec2.sh
@@ -17,12 +23,7 @@ pipeline {
                // Show the select input modal
                //echo "${ ami_id }"
                //echo "${key_name}"
-               withCredentials([[
-            $class: 'AmazonWebServicesCredentialsBinding',
-            credentialsId: 'aws-access',
-            accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-            secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-        ]]) {
+               
             sh '''
             echo ${AWS_ACCESS_KEY_ID}
             '''
