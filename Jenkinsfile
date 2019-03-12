@@ -24,9 +24,6 @@ pipeline {
                //echo "${ ami_id }"
                //echo "${key_name}"
                
-            sh '''
-            echo ${AWS_ACCESS_KEY_ID}
-            '''
             }
 //          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
    // some block
