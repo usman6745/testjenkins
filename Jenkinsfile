@@ -4,10 +4,11 @@ pipeline {
         string (description: 'enter ami_id', name: 'ami_id')
         choice (choices: ['CI_VPC', 'test1'], description: 'choose key pair?', name: 'key_name')
     }
-    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-
-
+    
     stages {
+      environment { 
+        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) 
+      }  
         stage ('build') {
            steps {
            git url: 'https://github.com/usman6745/ec2-launch-jenkins.git'
