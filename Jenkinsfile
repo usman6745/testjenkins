@@ -10,6 +10,9 @@ pipeline {
            // Show the select input modal
            input "do you want proceed"
             echo "hello from stage two"
+            echo "enter your name"
+            read name
+            echo $name   
                
                echo $amid_id
     
