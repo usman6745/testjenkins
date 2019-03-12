@@ -9,7 +9,7 @@ pipeline {
            steps {
            git url: 'https://github.com/usman6745/ec2-launch-jenkins.git'
            chmod +x ec2.sh
-           ./ec2.sh    
+           sh ./ec2.sh    
                // Show the select input modal
                //echo "${ ami_id }"
                //echo "${key_name}"
