@@ -9,8 +9,8 @@ pipeline {
            steps {
            git url: 'https://github.com/usman6745/ec2-launch-jenkins.git'
            // Show the select input modal
-               echo "${ ami_id }"
-               echo "${key_name}"
+               //echo "${ ami_id }"
+               //echo "${key_name}"
     
            
            }
