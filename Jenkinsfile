@@ -40,7 +40,7 @@ pipeline {
       slackSend baseUrl: 'https://opstree.slack.com/services/hooks/jenkins-ci/',
       channel: 'ot-meesho',
       color: 'good',
-        message: 'Jenkins-Slack Intigrated - Instance ID is ${ launchid }',
+        message: 'Jenkins-Slack Intigrated - Instance ID is $6',
       //message: 'Instance has launched',
       //message: ' $LaunchInstanceID ',
       teamDomain: 'opstree',
