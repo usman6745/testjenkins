@@ -25,10 +25,10 @@ pipeline {
           chmod +x ec2.sh
             ./ec2.sh $ami_id $keypair_name $Instance_type $subnetid $region_name $Key_Name $Key_Name_Value
         ''' 
-          sh '''
-          aws ec2 describe-instances --filters "Name=tag:name,Values=web1" > Instance-ID_VALUE
-          cat Instance-ID_VALUE
-          '''
+          //sh '''
+          //aws ec2 describe-instances --filters "Name=tag:name,Values=web1" > Instance-ID_VALUE
+          //cat Instance-ID_VALUE
+          //'''
           
           // Show the select input modal
           //echo "${ ami_id }"
