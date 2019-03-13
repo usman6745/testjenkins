@@ -35,7 +35,7 @@ pipeline {
 
       }
     }
-    stage('build') {
+    stage('slacknotification') {
       slackSend baseUrl: 'https://opstree.slack.com/services/hooks/jenkins-ci/',
       channel: 'ot-meesho',
       color: 'good',
