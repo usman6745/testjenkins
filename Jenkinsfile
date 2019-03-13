@@ -21,7 +21,7 @@ pipeline {
           git url: 'https://github.com/usman6745/jenkins-aws-ec2-launch.git'
           sh '''
           chmod +x ec2.sh
-            ./ ec2.sh $ami_id $keypair_name $Instance_type $subnetid $region_name
+            ./ec2.sh $ami_id $keypair_name $Instance_type $subnetid $region_name
           '''
           // Show the select input modal
           //echo "${ ami_id }"
