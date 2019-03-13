@@ -26,7 +26,7 @@ pipeline {
             ./ec2.sh $ami_id $keypair_name $Instance_type $subnetid $region_name $Key_Name $Key_Name_Value
         ''' 
           sh '''
-          aws ec2 describe-instances --filters "Name=tag:${Key_Name},Values=${Key_Name_Value}" | grep InstanceId
+          aws ec2 describe-instances --filters "Name=tag:name,Values=web1" | grep InstanceId
           '''
           
           // Show the select input modal
