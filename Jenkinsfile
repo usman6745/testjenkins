@@ -26,6 +26,7 @@ pipeline {
           // Show the select input modal
           //echo "${ ami_id }"
           //echo "${key_name}"
+          echo "${ launchid }"
 
         }
         //          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
@@ -40,7 +41,7 @@ pipeline {
       slackSend baseUrl: 'https://opstree.slack.com/services/hooks/jenkins-ci/',
       channel: 'ot-meesho',
       color: 'good',
-        message: 'Jenkins-Slack Intigrated - Instance ID is $6',
+        message: 'Jenkins-Slack Intigrated - Instance ID is ${ launchid }',
       //message: 'Instance has launched',
       //message: ' $LaunchInstanceID ',
       teamDomain: 'opstree',
