@@ -26,7 +26,7 @@ pipeline {
           // Show the select input modal
           //echo "${ ami_id }"
           //echo "${key_name}"
-          echo "${ launchid }"
+          echo " Launch ID is "${ launchid }""
 
         }
         //          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
