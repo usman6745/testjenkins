@@ -26,7 +26,8 @@ pipeline {
             ./ec2.sh $ami_id $keypair_name $Instance_type $subnetid $region_name $Key_Name $Key_Name_Value
         ''' 
           instanceid-value = sh (
-            script: "aws ec2 describe-instances --filters "Name=tag:"${Key_Name}",Values="${Key_Name_Value}"" | grep '\\[InstanceId]'",
+            echo "$Key_Name_Value"
+            //script: "aws ec2 describe-instances --filters "Name=tag:"${Key_Name}",Values="${Key_Name_Value}"" | grep '\\[InstanceId]'",
           returnStatus: true
           ) == 0
           echo "InstanceID is : ${instanceid-value}"
