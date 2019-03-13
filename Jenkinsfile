@@ -36,11 +36,11 @@ pipeline {
       }
     }
     stage('slacknotification') {
-      steps{
+      steps{      
       slackSend baseUrl: 'https://opstree.slack.com/services/hooks/jenkins-ci/',
       channel: 'ot-meesho',
       color: 'good',
-        message: 'Jenkins-Slack Intigrated - Instance ID is ${LaunchInstanceID}',
+        message: 'Jenkins-Slack Intigrated - Instance ID is ${lanunchid}',
       //message: 'Instance has launched',
       //message: ' $LaunchInstanceID ',
       teamDomain: 'opstree',
