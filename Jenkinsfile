@@ -41,8 +41,8 @@ pipeline {
       channel: 'ot-meesho',
       color: 'good',
       message: 'Jenkins-Slack',
-      message: 'Instance has launched'
-      message: $LaunchInstanceID
+      message: 'Instance has launched',
+      message: ' $LaunchInstanceID ',
       teamDomain: 'opstree',
       tokenCredentialId: 'slack-token'
     }
