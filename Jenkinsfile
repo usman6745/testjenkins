@@ -31,22 +31,9 @@ pipeline {
           returnStatus: true
           ) == 0
           echo "InstanceID is : ${instanceid-value}"
-          //sh '''
-          //aws ec2 describe-instances --filters "Name=tag:name,Values=web1" > Instance-ID_VALUE
-          //cat Instance-ID_VALUE
-          //'''
-          
-          // Show the select input modal
-          //echo "${ ami_id }"
-          //echo "${key_name}"
-         
-
+        
         }
-        //          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-        // some block
-
-
-
+        
       }
     }
     stage('slacknotification') {
